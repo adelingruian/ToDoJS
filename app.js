@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost:27017/tododb');
+mongoose.connect('mongodb+srv://aagruian:hgTDSE99@cluster0.gasmehc.mongodb.net/ToDoDB');
 
 
 //Create Item Schema
@@ -133,7 +133,7 @@ app.post('/delete', function (req,res) {
 })
 
 
-app.listen(3000, function () {
-    console.log("Server started o port 3000.");
+app.listen(process.env.PORT, function () {
+    console.log("Server started succesfully.");
 });
 
